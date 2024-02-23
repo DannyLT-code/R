@@ -1,0 +1,179 @@
+---
+title: "Proyecto integrador"
+output: html_notebook
+---
+
+#### BT1013 Análisis de biología computacional
+
+***
+
+###### López Vargas César Antonio – A01424978
+###### De Luna Díaz Daniel - A01423940
+###### Casillas Santoyo Sergio Alfonso - A01424863
+
+<center>
+![](/Users/danny/Documents/Images/logo_tec.png)
+</center>
+
+###### Fecha de entrega: 06/05/2022
+
+***
+
+> I. Introducción.
+
+* Situación problema;
+
+  A finales de 2019 la ciudad de Wuhan, en la provincia de Hubei (una ciudad de China con más de 11 millones de habitantes), se convirtió en el centro de una epidemia de neumonía de causa desconocida con implicaciones globales.
+
+  Se sabe que las pruebas serológicas son una herramienta muy útil para confirmar la infección por un patógeno en la población y, combinadas con datos epidemiológicos y clínicos, permiten estimar la gravedad y la transmisibilidad del patógeno e identificar los grupos de población que han sido infectados, así como aquellos que siguen siendo susceptibles.  Por ello, cada vez más requerimos datos moleculares como las secuencias de ácidos nucleicos de los virus para conocer su origen y potencialidad epidemiológica.
+
+* Preguntas guía;
+
+  + ¿De qué nos puede servir conocer el genoma de los virus? 
+  + ¿Cómo ha evolucionado el virus?
+  + ¿Cuántas variantes de SARS-CoV-2 existen en el mundo?
+  + ¿Todos tienen la misma agresividad?
+  + Sí el virus se contagió de otra especie a la humana, ¿Cuáles son las diferencias genómicas entre        otras especies y la variante humana?
+  + ¿Cuál es la información que nos puede brindar un árbol filogenético?
+  + ¿El análisis bioinformático podría ayudar a controlar y contener epidemias por estos virus?
+  + El dogma central de la biología molecular, ¿me ayudará a entender y poder enfrentar retos complejos     de epidemiología?
+  
+* Objetivo(s);
+
+  El objetivo de esta actividad adquirir competencias y subcompetencias mediante la elaboración de un producto el cual será desarrollado con la ayuda de los temas vistos y aprendidos durante esta unidad de formación. A través de esta problemática se realizará una investigación profunda sobre uno de los virus que ha afectado en gran manera al país, ```Virus SARS-CoV-2```, determinar y establecer relaciones filogenéticas, determinando patrones y tendencias, así como hacer uso de herramientas de programación para establecer un análisis de datos.
+  
+> II. Contexto.
+
+* Situación actual;
+
+  A pesar de que mas de un 50% de la población ya se encuentra vacunada en contra del virus ```SARS-CoV-2``` parecería que esto a penas esta comenzando. Con mas de 20 millones de casos al mes y un aproximado de 90 mil muertes en el mismo periodo de tiempo a pesar de que se ha logrado reducir la mortalidad de este virus este sigue mutando de manera constante lo cual provoca números de contagio tan altos como los que se presenciaron al comienzo de la pandemia
+
+```{r}
+```
+
+* Variantes;
+
+  Previamente mencionado, se platico de como el virus ```SARS-CoV-2``` ha mutado de tal manera que los contagios siguen igual de elevados a pesar de que ya somos mas de 11 billones de habitantes vacunados en el mundo junto con los varios metodos de prevencion e incluso protocolos de cuarentena que muchos paises y gobiernos del mundo han implementado e impuesto tanto en sus habitantes como en sus visitantes. A que se debe esto? 
+  
+  Esto se debe a que el virus ha evolucionado y se ha propagado en la forma de diferentes variantes, algunas de estas teniendo mayor índice de contagio otras siendo mucho mas letales. Estas mutaciones pueden tomar forma de una o varias mutaciones, un cambio único en el genoma del virus (código genético) las cuales ocurren con frecuencia, pero solo a veces modifican las características del virus, o un simple linaje, el cual es un grupo de virus estrechamente relacionados con un ancestro en común. La primera de estas variantes fue descubierta y otorgada la clasificación de variante de preocupación [VOC por sus siglas en ingles] el 29 de diciembre del 2020 a la cual se le denomino como la variante ```Alfa, B.1.1.7```. Junto con esta de igual manera se descubrieron dos variantes mas las cuales fueron denominadas variante ```Beta, B.1.35``` y variante ```Gamma, P.1``` respectivamente. A pesar de que todas fueron clasificadas como variantes de preocupación cuando fueron identificadas por primera vez fue el 21 de diciembre del 2021 que la OMS decidió moverlas a una diferente categoría las cuales serán  brevemente explicadas a continuación. 
+
+
+* Clasificación de variantes;
+  
+  Existen 4 clasificaciones para el ```SARS-CoV-2``` y sus variantes.
+  
+    + Variante bajo monitoreo (VBM)
+    + Variante de interés (VOI, por sus siglas en inglés)
+    + Variante de preocupación (VOC, por sus siglas en inglés)
+    + Variante con grandes consecuencias (VOHC, por sus siglas en inglés)
+  
+  Y en estas existen docenas de diferentes variantes, algunas de las cuales son:
+  
+  VBM            | VOI           | VOC           | VOHC          | País de origen | Fecha         |  
+  -------------- | ------------- | ------------- | ------------- | -------------- | ------------- |
+   Alpha         | ------------- | ------------- | ------------- | Reino Unido    | Sep/2020      |
+   Beta          | ------------- | ------------- | ------------- | Sudáfrica      | May/2020      |
+   Gamma         | ------------- | ------------- | ------------- | Brasil         | Nov/2020      |
+   Épsilon       | ------------- | ------------- | ------------- | Estados Unidos | Mar/2020      |
+   Eta           | ------------- | ------------- | ------------- | ETA            | Dic/2020      |
+   Iota          | ------------- | ------------- | ------------- | Estados Unidos | Nov/2020      |
+   Kappa         | ------------- | ------------- | ------------- | India          | Oct/2020      |
+   Lambda        | ------------- | ------------- | ------------- | Perú           | Dic/2020      |
+   Mu            | ------------- | ------------- | ------------- | Colombia       | Ene/2021      |
+   Zeta          | ------------- | ------------- | ------------- | Filipinas      | Ene/2021      |
+   Dseta         | ------------- | ------------- | ------------- | Brasil         | Abr/2020      |
+   ------------- | Delta         | ------------- | ------------- | India          | Oct/2020      |
+   ------------- | Ómicron       | ------------- | ------------- | Sudáfrica      | Nov/2021      |
+
+> III. Hipótesis.
+
+  Al igual que todo virus, el coronavirus ha mutado y de manera muy rápida. En tan solo 2 años el virus ha tenido más de 10 variantes de interes, de las cuales actualmente solo 2 quedan y 2 más están siendo consideradas para ser agregadas a la lista. Esto nos pone en una situación muy difícil, pero sobre todo preocupante, ya que estas variantes demuestran ciertos niveles de resistencia a las vacunas desarrolladas recientemente, lo cual posa una pregunta. ¿Acaso la pandemia del coronavirus esta a punto de empeorar? Nos hicimos esta pregunta con la intención de responderla con ayuda de las secuencias que fueron analizadas, sin embargo, nosotros creemos que no, pensamos que el virus muta de manera tan rápida que estas variantes de interés únicamente forman parte de las olas principales de contagio, obtuvimos esta respuesta al ver que las otras variantes que en algún momento fueron de interés fueron rápidamente clasificadas como simples variantes de bajo monitoreo algo que incluso está por pasar con las actuales variantes de interés. Esto y las adicionales variantes denominadas "XC" y "XD" respectivamente, son solo algunos ejemplos de las variantes de '''SARS-CoV-2''' que están pasando por lo que parecería ser un ciclo, un ciclo, nosotros notamos y que eventualmente nos llevó a la siguiente hipótesis:
+  Las variantes más peligrosas de '''SARS-CoV-2''' tienen algo en común a nivel genético que las hace seguir un patrón de mutación.
+  Por ello investigaremos cuál es ese (o esos) posibles factores que lo causan para poder predecir e incluso prevenir otras posibles variantes peligrosas en el futuro.Para esto estaremos usando una de nuestras propuestas previamente mencionadas en donde estaremos analizando las variantes de interés actuales y comparándolas para ver si podemos encontrar los factores que causan estas olas de contagio.
+  
+  * Propuesta;
+  De las 3 propuestas originales decidimos irnos con la tercera:
+  + Hacer un programa en R el cual nos muestre las semejanzas y las diferencias a nivel genético entre las diferentes variantes de interés del '''SARS-CoV-2''' permitiéndonos encontrar un patrón entre ellas.
+
+
+> IV. Procesamiento de datos.
+  
+  Para comenzar se decidió utilizar el gen S de la secuencia original y las dos variantes de interés actuales para el virus '''SARS-CoV-2''', estás siendo la variante Ómicron y Delta. Comenzamos nuestro procedimiento alineando nuestras dos variantes con el gen original con el objetivo de tener los mejores resultados posibles al momento de compararlas y sacar nuestras gráficas en donde se verán los aminoácidos mutados. Para esto se utilizó el algoritmo de Needleman–Wunsch el cual nos dio los siguientes porcentajes de similitud:
+
+```{r}
+cat("Original vs Ómicron. Se obtuvo una similitud del:", acc, "%\n")
+cat("Original vs Delta. Se obtuvo una similitud del:", acc2, "%\n")
+cat("Delta vs Ómicron. Se obtuvo una similitud del:", acc3, "%\n")
+
+```
+
+  Como se puede observar también estaremos analizando y comparando las variantes entre sí, esto con el objetivo de comprobar que tan similares realmente son las denominadas, variantes de interés. Sin embargo, hasta ahora los resultados nos demuestran que estos son menos parecidas entre ellas que entre el gen S de nuestra secuencia original.
+  
+
+> V. Resultados.
+
+  Una vez se tenian las secuencias alineadas estas fueron comparadas entre ellas, permitiendonos obtener los resultados siguientes: 
+  
+```{r}
+m = ggplot(dfOriginalOmicron)
+m = m + aes(x=mutation, fill=mutation, label=..count..)
+m = m + ggtitle("Mutaciones detectadas, gen. Original vs variante Omicron")
+m = m + labs(x= "Mutacion", y= "Frecuencia", fill= "Mutaciones")
+m = m + geom_bar(stat = "count") 
+m = m + geom_text(stat = "count", vjust= 0)
+m
+
+n = ggplot(dfOriginalDelta)
+n = n + aes(x=mutation, fill=mutation, label=..count..)
+n = n + ggtitle("Mutaciones detectadas, gen. Original vs variante Delta")
+n = n + labs(x= "Mutacion", y= "Frecuencia", fill= "Mutaciones")
+n = n + geom_bar(stat = "count") 
+n = n + geom_text(stat = "count", vjust= 0)
+n
+
+o = ggplot(dfDeltaOmicron)
+o = o + aes(x=mutation, fill=mutation, label=..count..)
+o = o + ggtitle("Mutaciones detectadas, variante Omicron vs variante Delta")
+o = o + labs(x= "Mutacion", y= "Frecuencia", fill= "Mutaciones")
+o = o + geom_bar(stat = "count") 
+o = o + geom_text(stat = "count", vjust= 0)
+o
+
+p = ggplot(df)
+p = p + aes(x=mutation, fill=mutation, label=..count..)
+p = p + ggtitle("Mutaciones detectadas, gen. Original vs variante Omicron vs variante Delta")
+p = p + labs(x= "Mutacion", y= "Frecuencia", fill= "Mutaciones")
+p = p + geom_bar(stat = "count") 
+p = p + geom_text(stat = "count", vjust= 0)
+p
+```
+
+  Como podemos ver a pesar de los resultados obtenidos durante nuestro procesamiento de datos en donde se obtuvieron porcentajes de variación muy bajos, es gracias a nuestras gráficas que podemos percatarnos de como estos pequeños porcentajes representan una cantidad inmensa de mutaciones entre nuestro gen original y nuestras dos variantes. De igual manera, a pesar de que los porcentajes de similitud entre nuestras dos variantes, estas tablas nos demuestran un factor muy importante de nuestra hipótesis, el hecho de que ambas están mutando los aminoácidos "U" y "A" respectivamente de manera muy constante, y a pesar de que nuestra variante delta demuestra un patrón de mutaciones mucho más balanceadas es nuestra variante Ómicron, también conocida como la más contagiosa, pero menos mortal de las dos, la que nos demuestra un patrón de mutaciones mucho más concentrada en los aminoácidos previamente mencionados.
+  
+> VI. Conclusiones.
+
+* Basándonos en nuestra hipótesis:
+   + Los aminoácidos más frecuentes en mutar son el "A" y al "U"respectivamente, un comportamiento     presente en ambas variantes.
+   + A pesar de que existe un mayor número de cambios en nuestra varíente Ómicron, la variante Delta   resulto ser la más mortal, esto nos dice que un mayor número de mutaciones no necesariamente           resultan en un virus más peligroso.
+
+
+Con ayuda de estos dos puntos podemos llegar a una conclusión satisfactoria, la cual nos dice que al momento de analizar una nueva variante del virus, es crucial prestarle atención a los aminoácidos "A" y "U" mientras se puede descartar la mentalidad de que entre más cambios existan en un gen esto resultara variante más peligrosa. A pesar de que se pueden comparar un mayor número de secuencias y un mayor número de variantes, esto nos puede dar una guia en los factores a analizar en el futuro, lo que podria resultar en un ahorro de recursos al momento de analizar futuras variantes e incluso predecir futuras olas de contagio basándonos en los puntos previamente mencionados y al posible patrón de comportamiento con los aminoácidos "A" y "U".
+
+
+
+## Referencias
+
+National Library of Medicine, data base. Accessed on [2022], available at: 
+https://www.ncbi.nlm.nih.gov
+[link](https://www.ncbi.nlm.nih.gov)
+
+Centro para el Control y la Prevención de Enfermedades. Accessed on [2022], available at:
+https://espanol.cdc.gov/coronavirus/2019-ncov/variants/variant-classifications.html
+[link](https://espanol.cdc.gov/coronavirus/2019-ncov/variants/variant-classifications.html)
+
+Organización Mundial de la Salud. Accessed on [2022], available at: 
+https://www.who.int/es/activities/tracking-SARS-CoV-2-variants
+[link](https://www.who.int/es/activities/tracking-SARS-CoV-2-variants)
+
+  
+
